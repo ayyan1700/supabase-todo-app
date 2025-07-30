@@ -1,0 +1,226 @@
+:root {
+  --bg: #0f172a;
+  --card: #1e293b;
+  --text: #f1f5f9;
+  --muted: #94a3b8;
+  --primary: #3b82f6;
+  --primary-hover: #2563eb;
+  --danger: #ef4444;
+  --danger-hover: #dc2626;
+  --warning: #f59e0b;
+  --radius: 12px;
+}
+
+/* ==================== Reset & Page ==================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 16px;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ==================== Card container ==================== */
+.container {
+  width: 100%;
+  max-width: 600px;
+  background: var(--card);
+  padding: 24px;
+  border-radius: var(--radius);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+  margin: 0 0 20px;
+  text-align: center;
+  font-size: 24px;
+  color: var(--primary);
+  letter-spacing: 0.3px;
+}
+
+/* ==================== Form ==================== */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.input-wrapper label {
+  margin-bottom: 4px;
+  font-size: 14px;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.input-wrapper input {
+  width: 100%; /* FIXED - 94% hata diya */
+  max-width: 100%;
+  padding: 12px 16px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #0f172a;
+  color: var(--text);
+  font-size: 16px;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+.input-wrapper input::placeholder {
+  color: var(--muted);
+}
+
+.input-wrapper input:focus {
+  border-color: rgba(59, 130, 246, 0.55);
+  box-shadow: 0 0 0 6px rgba(59, 130, 246, 0.15);
+}
+
+#add {
+  width: 100%;
+  padding: 12px 16px;
+  margin-top: 5px;
+  border-radius: var(--radius);
+  border: none;
+  outline: none;
+  font-size: 16px;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: filter 0.2s, transform 0.06s;
+}
+
+#add:hover {
+  filter: brightness(1.05);
+}
+
+#add:active {
+  transform: translateY(1px) scale(0.99);
+}
+
+/* ==================== List ==================== */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0;
+}
+
+li {
+  background: #162239;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 14px;
+  border-radius: var(--radius);
+  margin-bottom: 12px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) auto;
+  gap: 12px;
+  align-items: flex-start;
+  transition: border 0.2s, background 0.2s, transform 0.12s;
+  word-break: break-word;
+}
+
+li:hover {
+  border-color: rgba(255, 255, 255, 0.18);
+  background: #182840;
+  transform: translateY(-1px);
+}
+
+/* Each field block */
+li .field {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+li .field span {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 2px;
+}
+
+li .field p {
+  margin: 0;
+  font-size: 15px;
+  color: var(--text);
+}
+
+/* ==================== Actions ==================== */
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.actions button {
+  appearance: none;
+  border: none;
+  background: rgba(2, 6, 23, 0.5);
+  color: var(--text);
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: transform 0.06s, filter 0.2s;
+}
+
+.actions .Edit {
+  background: var(--warning);
+  color: #fff;
+}
+
+.actions .del {
+  background: var(--danger);
+  color: #fff;
+}
+
+.actions button:hover {
+  filter: brightness(1.05);
+}
+
+.actions button:active {
+  transform: translateY(1px) scale(0.97);
+}
+
+/* ==================== Mobile tweaks ==================== */
+@media (max-width: 480px) {
+  .container {
+    padding: 16px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  .input-wrapper input,
+  #add {
+    font-size: 15px;
+  }
+
+  li {
+    grid-template-columns: 1fr;
+  }
+
+  .actions {
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: 8px;
+  }
+}

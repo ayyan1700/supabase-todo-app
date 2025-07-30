@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h2>Student Portal</h2>
+    <div class="form-group">
+      <div class="input-wrapper">
+        <label for="text">Task</label>
+        <input type="text" id="text" placeholder="Enter task..." />
+      </div>
+      <div class="input-wrapper">
+        <label for="rollNum">Roll Number</label>
+        <input type="text" id="rollNum" placeholder="Enter roll number..." />
+      </div>
+      <div class="input-wrapper">
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" placeholder="Enter subject..." />
+      </div>
+      <button id="add">Add Task</button>
+    </div>
+
+    <ul id="list">
+      <!-- JS ke through li append honge -->
+    </ul>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script type="module" src="app.js"></script>
+</body>
+
+</html>
